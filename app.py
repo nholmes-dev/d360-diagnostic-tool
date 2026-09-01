@@ -10,14 +10,16 @@ def get_db_conn():
 
 #FUNCTION 2
 
-#Simple validation checking if data is correct using if statements
+# Simple validation checking if data is correct using if statements
 def check_data(id_number, council_name):
     if id_number < 0:
         print("Error: ID cannot be negative")
         return False
-    if council_name == "":
+
+    if council_name.strip() == "":
         print("Error: Name cannot be blank")
         return False
+
     return True
 
 
