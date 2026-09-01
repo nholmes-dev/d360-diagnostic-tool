@@ -15,7 +15,7 @@ def check_data(id_number, council_name):
     if id_number < 0:
         print("Error: ID cannot be negative")
         return False
-    if council_name == "":
+    if council_name.strip() == "":
         print("Error: Name cannot be blank")
         return False
     return True
@@ -39,10 +39,10 @@ def run_setup():
     
     #Simple arrays of mock data to insert
     #Using generic council names for privacy compliance
-    cursor.execute("INSERT OR REPLACE INTO uat_logs VALUES (101, 'Council_Alpha_UAT', 45.2, 'Healthy')")
-    cursor.execute("INSERT OR REPLACE INTO uat_logs VALUES (104, 'Council_Beta_UAT', 12.8, 'Degraded')")
-    cursor.execute("INSERT OR REPLACE INTO uat_logs VALUES (102, 'Council_Gamma_UAT', 89.1, 'Healthy')")
-    cursor.execute("INSERT OR REPLACE INTO uat_logs VALUES (103, 'Council_Delta_UAT', 31.5, 'Critical')")
+    cursor.execute("INSERT OR REPLACE INTO uat_logs VALUES (101, 'Council_1_UAT', 45.2, 'Healthy')")
+    cursor.execute("INSERT OR REPLACE INTO uat_logs VALUES (104, 'Council_2_UAT', 12.8, 'Degraded')")
+    cursor.execute("INSERT OR REPLACE INTO uat_logs VALUES (102, 'Council_3_UAT', 89.1, 'Healthy')")
+    cursor.execute("INSERT OR REPLACE INTO uat_logs VALUES (103, 'Council_4_UAT', 31.5, 'Critical')")
     
     conn.commit()
     conn.close()
